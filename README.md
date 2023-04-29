@@ -105,8 +105,6 @@ The HTML test result files will be found in the following directory.
 ```path_to_project/module_name/build/reports/androidTests/connected/ ```
 
 ## Screenshots
-<img src="screenshoots/articles_list_main.png" width=50% height=50%>
-<img src="screenshoots/articles_list_search.png" width=50% height=50%>
-<img src="screenshoots/article_details_expanded.png" width=50% height=50%>
-<img src="screenshoots/article_details_collapsed.png" width=50% height=50%>
-<img src="screenshoots/tablet_view.png" width=50% height=50%>
+<img src="screenshoots/articles_list_main.png" width=40% height=40%> <img src="screenshoots/articles_list_search.png" width=40% height=40%>
+<img src="screenshoots/article_details_expanded.png" width=40% height=40%> <img src="screenshoots/article_details_collapsed.png" width=40% height=40%>
+<img src="screenshoots/tablet_view.png">
