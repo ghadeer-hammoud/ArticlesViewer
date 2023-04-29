@@ -104,9 +104,9 @@ Connect a device or an emulator and run the **connectedAndroidTest** task in ter
 The HTML test result files will be found in the following directory.
 ```path_to_project/module_name/build/reports/androidTests/connected/ ```
 
-#### Screenshots
-![Articles List (main)](screenshoots/articles_list_main.png)
-![Articles List (search)](screenshoots/articles_list_search.png)
-![Article Details (expanded)](screenshoots/article_details_expanded.png)
-![Article Details (collapsed)](screenshoots/article_details_collapsed.png)
-![Tablet View](screenshoots/tablet_view.png)
+## Screenshots
+<img src="screenshoots/articles_list_main.png" width=50% height=50%>
+<img src="screenshoots/articles_list_search.png" width=50% height=50%>
+<img src="screenshoots/article_details_expanded.png" width=50% height=50%>
+<img src="screenshoots/article_details_collapsed.png" width=50% height=50%>
+<img src="screenshoots/tablet_view.png" width=50% height=50%>
