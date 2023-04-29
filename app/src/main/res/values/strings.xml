@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">ArticlesViewer</string>
+    <string name="app_title">NY Times Most Popular</string>
+    <string name="loading_articles">Loading articles …</string>
+    <string name="loading_article">Loading article …</string>
+    <string name="undefined_article">Undefined Article ID</string>
+
+    <string name="starts_with_bullet_point">• %1$s</string>
+    <string name="adx_keywords">ADX Keywords</string>
+    <string name="des_facet">Description Facets</string>
+    <string name="org_facet">Organization Facets</string>
+    <string name="per_facet">Person Facets</string>
+    <string name="geo_facet">Geographic Facets</string>
+    <string name="search">Search</string>
+    <string name="refresh">Refresh</string>
+    <string name="search_hint">Search titles, bylines …</string>
+    <string name="no_results_found">No Results Found.</string>
+    <string name="choose_period">Choose Period</string>
+
+    <string-array name="period_values">
+        <item>Last Day</item>
+        <item>Last 7 Days</item>
+        <item>Last 30 Days</item>
+    </string-array>
+</resources>

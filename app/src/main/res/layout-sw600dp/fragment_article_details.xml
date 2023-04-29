@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_detail_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.HostActivity"
+    tools:ignore="MergeRootFrame">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_placeholder"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/item_detail_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/mediumSpace">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/largeSpace"
+                android:text="The Sickening Déjà Vu of Watching Trump Manhandle DeSantis"
+                android:textSize="@dimen/largeFont"
+                android:textColor="@color/grey_800"
+                android:textStyle="bold"
+                android:textIsSelectable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvAbstract"
+                style="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smallSpace"
+                android:text="Republicans can’t beat the ex-president by acting scared of him."
+                android:textSize="@dimen/mediumFont"
+                android:textColor="@color/grey_700"
+                android:textIsSelectable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+            <TextView
+                android:id="@+id/tvSource"
+                style="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smallSpace"
+                android:text="New York Times"
+                android:textSize="@dimen/smallFont"
+                android:textColor="@color/grey_600"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAbstract"
+                />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginStart="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:background="@color/grey_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSource"
+                />
+
+            <TextView
+                android:id="@+id/tvByline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:text="By Michelle Goldberg"
+                android:textSize="@dimen/smallFont"
+                android:textColor="@color/grey_600"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvPublishedDate"
+                app:layout_constraintTop_toBottomOf="@+id/divider1"
+                />
+
+            <TextView
+                android:id="@+id/tvPublishedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:gravity="center_vertical"
+                android:text="2017-06-24"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/exSmallFont"
+                app:drawableStartCompat="@drawable/ic_date_18"
+                android:drawablePadding="@dimen/smallSpace"
+                app:drawableTint="@color/grey_600"
+                app:layout_constraintTop_toBottomOf="@+id/divider1"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mediumSpace"
+                app:layout_constraintTop_toBottomOf="@+id/tvByline"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/green"
+                    android:textColor="@color/white"
+                    android:text="Type"
+                    />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/orange"
+                    android:textColor="@color/white"
+                    android:text="Section" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSubsection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/white"
+                    android:text="Subsection" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipNytdsection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/red"
+                    android:textColor="@color/white"
+                    android:text="Nytdsection" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginStart="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:background="@color/grey_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutADXKeywords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2">
+
+                <TextView
+                    android:id="@+id/tvADXKeywordsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"
+                    android:layout_marginEnd="@dimen/mediumSpace"
+                    android:text="@string/adx_keywords"
+                    android:textSize="@dimen/exSmallFont"
+                    android:textColor="@color/grey_500"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupADXKeywords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginStart="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:background="@color/grey_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutADXKeywords"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutDesFacet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider3">
+
+                <TextView
+                    android:id="@+id/tvDesFacetLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"
+                    android:layout_marginEnd="@dimen/mediumSpace"
+                    android:text="@string/des_facet"
+                    android:textSize="@dimen/exSmallFont"
+                    android:textColor="@color/grey_500"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupDesFacet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginStart="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:background="@color/grey_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutDesFacet"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutOrgFacet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4">
+
+                <TextView
+                    android:id="@+id/tvOrgFacetLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"
+                    android:layout_marginEnd="@dimen/mediumSpace"
+                    android:text="@string/org_facet"
+                    android:textSize="@dimen/exSmallFont"
+                    android:textColor="@color/grey_500"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupOrgFacet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginStart="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:background="@color/grey_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutOrgFacet"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutPerFacet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider5">
+
+                <TextView
+                    android:id="@+id/tvPerFacetLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"
+                    android:layout_marginEnd="@dimen/mediumSpace"
+                    android:text="@string/per_facet"
+                    android:textSize="@dimen/exSmallFont"
+                    android:textColor="@color/grey_500"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupPerFacet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"/>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/mediumSpace"
+                android:layout_marginStart="@dimen/mediumSpace"
+                android:layout_marginEnd="@dimen/mediumSpace"
+                android:background="@color/grey_300"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPerFacet"
+                />
+
+            <LinearLayout
+                android:id="@+id/layoutGeoFacet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider6">
+
+                <TextView
+                    android:id="@+id/tvGeoFacetLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"
+                    android:layout_marginEnd="@dimen/mediumSpace"
+                    android:text="@string/geo_facet"
+                    android:textSize="@dimen/exSmallFont"
+                    android:textColor="@color/grey_500"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupGeoFacet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumSpace"/>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/dividers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="divider1, divider2, divider3, divider4, divider5, divider6"
+                />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="layoutADXKeywords, layoutDesFacet, layoutOrgFacet, layoutPerFacet, layoutGeoFacet"
+                />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/dataViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tvTitle, tvAbstract, tvSource, tvByline, tvPublishedDate, chipGroup, dividers, titles"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mediumSpace"
+            android:text="Loading articles ..."
+            />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabNavigateUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:layout_anchor="@+id/item_detail_scroll_view"
+        app:layout_anchorGravity="top|end"
+        app:srcCompat="@drawable/ic_link_24" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
