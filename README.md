@@ -1,6 +1,11 @@
 # ArticlesViewer
 Simple articles viewer app that consumes **NY Times Most Popular API** to show the most viewed articles in the last 1/7/30 days.
 
+## Screenshots
+<img src="screenshoots/articles_list_main.png" width=40% height=40%> <img src="screenshoots/articles_list_search.png" width=40% height=40%>
+<img src="screenshoots/article_details_expanded.png" width=40% height=40%> <img src="screenshoots/article_details_collapsed.png" width=40% height=40%>
+<img src="screenshoots/tablet_view.png">
+
 ## General
 - This project is an example of how to impelement a clean architecture in android/ kotlin.
 - **MVVM** architecture is followed along with **Repository** pattern.
@@ -103,8 +108,3 @@ Connect a device or an emulator and run the **connectedAndroidTest** task in ter
 ```./gradlew connectedAndroidTest```
 The HTML test result files will be found in the following directory.
 ```path_to_project/module_name/build/reports/androidTests/connected/ ```
-
-## Screenshots
-<img src="screenshoots/articles_list_main.png" width=40% height=40%> <img src="screenshoots/articles_list_search.png" width=40% height=40%>
-<img src="screenshoots/article_details_expanded.png" width=40% height=40%> <img src="screenshoots/article_details_collapsed.png" width=40% height=40%>
-<img src="screenshoots/tablet_view.png">
